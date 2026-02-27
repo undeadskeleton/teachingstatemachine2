@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://bievrl1fdgxs1"]
+
+[ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_lsuyn"]
+[ext_resource type="PackedScene" uid="uid://bdrr5j46kymw" path="res://scene/player.tscn" id="2_vanxo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vanxo"]
+size = Vector2(1174.25, 15.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oebcw"]
+size = Vector2(285, 13)
+
+[node name="base" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(582, 642.5)
+scale = Vector2(9.171875, 0.1484375)
+texture = ExtResource("1_lsuyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(576, 641)
+shape = SubResource("RectangleShape2D_vanxo")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(16, -227)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(1026, 644)
+scale = Vector2(2.234375, 0.12500009)
+texture = ExtResource("1_lsuyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(1026.5, 644.5)
+shape = SubResource("RectangleShape2D_oebcw")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(-860, -112)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+position = Vector2(1026, 644)
+scale = Vector2(2.234375, 0.12500009)
+texture = ExtResource("1_lsuyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+position = Vector2(1026.5, 644.5)
+shape = SubResource("RectangleShape2D_oebcw")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+position = Vector2(-405, -98)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(1026, 644)
+scale = Vector2(2.234375, 0.12500009)
+texture = ExtResource("1_lsuyn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(1026.5, 644.5)
+shape = SubResource("RectangleShape2D_oebcw")
+
+[node name="Player" parent="." instance=ExtResource("2_vanxo")]
+position = Vector2(135, 413)
+scale = Vector2(0.36, 0.36)

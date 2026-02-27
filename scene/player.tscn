@@ -1,0 +1,53 @@
+[gd_scene load_steps=9 format=3 uid="uid://bdrr5j46kymw"]
+
+[ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_xo3ru"]
+[ext_resource type="Script" uid="uid://d12jgqts1xm5t" path="res://script/statemachine.gd" id="2_fvtld"]
+[ext_resource type="Script" uid="uid://whum2p8jvoo7" path="res://script/idle.gd" id="3_oh5ij"]
+[ext_resource type="Script" uid="uid://coexvebb5cbgo" path="res://script/move.gd" id="4_hp4bs"]
+[ext_resource type="Script" uid="uid://b0h7n1ne3wdti" path="res://script/jump.gd" id="5_g2vtq"]
+[ext_resource type="Script" uid="uid://bb6k3hg4bvavv" path="res://script/dash.gd" id="6_2fvbb"]
+
+[sub_resource type="GDScript" id="GDScript_oh5ij"]
+script/source = "extends CharacterBody2D
+
+class_name Player
+
+func _physics_process(delta: float) -> void:
+	move_and_slide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hjaqi"]
+radius = 48.0
+height = 128.0
+
+[node name="Player" type="CharacterBody2D"]
+script = SubResource("GDScript_oh5ij")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_xo3ru")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_hjaqi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.63, 0.63)
+
+[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_fvtld")
+initial_state = NodePath("IdleState")
+
+[node name="IdleState" type="Node" parent="StateMachine"]
+script = ExtResource("3_oh5ij")
+metadata/_custom_type_script = "uid://whum2p8jvoo7"
+
+[node name="MoveState" type="Node" parent="StateMachine"]
+script = ExtResource("4_hp4bs")
+metadata/_custom_type_script = "uid://coexvebb5cbgo"
+
+[node name="JumpState" type="Node" parent="StateMachine"]
+script = ExtResource("5_g2vtq")
+metadata/_custom_type_script = "uid://b0h7n1ne3wdti"
+
+[node name="DashState" type="Node" parent="StateMachine"]
+script = ExtResource("6_2fvbb")
+metadata/_custom_type_script = "uid://bb6k3hg4bvavv"

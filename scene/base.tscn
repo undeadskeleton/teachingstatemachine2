@@ -3,8 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_lsuyn"]
 [ext_resource type="PackedScene" uid="uid://bdrr5j46kymw" path="res://scene/player.tscn" id="2_vanxo"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_vanxo"]
-size = Vector2(1174.25, 15.5)
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vanxo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oebcw"]
 size = Vector2(285, 13)
@@ -20,7 +19,7 @@ texture = ExtResource("1_lsuyn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(576, 641)
-shape = SubResource("RectangleShape2D_vanxo")
+shape = SubResource("WorldBoundaryShape2D_vanxo")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(16, -227)

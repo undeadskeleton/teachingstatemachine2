@@ -15,5 +15,5 @@ func handle_input(event: InputEvent)-> void:
 		statemachine.change_state("jumpstate")
 	if Input.is_action_pressed("ui_left") or Input.is_action_pressed("ui_right"):
 		statemachine.change_state("movestate")
-	if Input.is_action_just_pressed("dash"):
+	if Input.is_action_just_pressed("Dash"):
 		statemachine.change_state("dashstate")

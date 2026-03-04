@@ -8,6 +8,8 @@ var current_state : StateInterface
 var currentstatename : String 
 @export var initial_state : StateInterface
 
+var lastdir : int = 1
+
 func _ready()-> void:
 	#Take all the children under StateMachine node  
 	for child in get_children():

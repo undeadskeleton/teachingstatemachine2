@@ -5,7 +5,7 @@ class_name JumpState
 func enter()-> void:
 	print("Enter jump state")
 	var character = statemachine.get_parent()
-	character.velocity.y = -600
+	character.velocity.y = -300
 
 func physics_update(delta: float)-> void:
 	var character = statemachine.get_parent()
@@ -16,6 +16,7 @@ func physics_update(delta: float)-> void:
 	#handle air movement 
 	
 	var direction= Input.get_axis("ui_left","ui_right")
+	statemachine.lastdir = sign(direction)
 	
 	character.velocity.x = 200 * direction
 

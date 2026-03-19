@@ -21,7 +21,7 @@ func physics_update(delta: float)-> void:
 	character.velocity.x = direction * Speed
 
 func handle_input(event: InputEvent)-> void:
-	if Input.is_action_just_pressed("ui_up"):
+	if Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_accept"):
 		statemachine.change_state("jumpstate")
 	if Input.is_action_just_pressed("Dash"):
 		statemachine.change_state("dashstate")

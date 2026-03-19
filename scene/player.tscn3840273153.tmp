@@ -70,16 +70,15 @@ autowrap_mode = 2
 script = ExtResource("7_hp4bs")
 statemachine = NodePath("../StateMachine")
 
-[node name="VelocityDebugLabel" type="Label" parent="." node_paths=PackedStringArray("player")]
+[node name="VelocityDebugLabel" type="Label" parent="."]
 offset_left = -336.0
 offset_top = 91.0
 offset_right = -117.0
 offset_bottom = 151.0
 text = "x:0.0,y:0.0"
 script = ExtResource("8_g2vtq")
-player = NodePath("..")
 
-[node name="DashTimerDebugLabel" type="Label" parent="." node_paths=PackedStringArray("dashstate")]
+[node name="DashTimerDebugLabel" type="Label" parent="." node_paths=PackedStringArray("statemachine")]
 offset_left = 200.0
 offset_top = -164.0
 offset_right = 351.0
@@ -87,4 +86,4 @@ offset_bottom = -112.0
 text = "DashTimer:"
 vertical_alignment = 1
 script = ExtResource("9_2fvbb")
-dashstate = NodePath("../StateMachine/DashState")
+statemachine = NodePath("../StateMachine")

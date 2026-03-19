@@ -37,7 +37,10 @@ func change_state(new_state_name: String)-> void:
 	if current_state:
 		current_state.exit()
 		
-	current_state = states.get(new_state_name.to_lower())
-	
+	currentstatename=new_state_name
+	current_state = states.get(currentstatename.to_lower())
 	if current_state:
 		current_state.enter()
+
+func get_current_state()-> String:
+	return currentstatename

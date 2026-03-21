@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = statemachine.get_current_state()
+	text = statemachine.get_current_state()+" direction:"+str(statemachine.lastdir)
 	pass

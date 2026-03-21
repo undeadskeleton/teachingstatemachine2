@@ -3,8 +3,8 @@ extends StateInterface
 class_name IdleState
 
 func enter()-> void:
-	print("Enter idle state")
-	print("Direction in idlestate",statemachine.lastdir)
+	print("Direction in idlestate ",statemachine.lastdir)
+	
 func physics_update(delta: float)-> void:
 	var char = statemachine.get_parent()
 	if !char.is_on_floor():

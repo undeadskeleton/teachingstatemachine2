@@ -8,5 +8,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	text = "x:"+str(player.velocity.x)+" y:"+str(player.velocity.y)
+	text = "x:"+str(snapped(player.velocity.x,0.1))+" y:"+str(snapped(player.velocity.y,0))
 	pass

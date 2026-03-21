@@ -25,7 +25,7 @@ radius = 48.0
 height = 128.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_oh5ij"]
-font_size = 91
+font_size = 25
 
 [node name="Player" type="CharacterBody2D"]
 script = SubResource("GDScript_oh5ij")
@@ -37,7 +37,7 @@ texture = ExtResource("1_xo3ru")
 shape = SubResource("CapsuleShape2D_hjaqi")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
+enabled = false
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fvtld")
@@ -75,6 +75,7 @@ offset_left = -336.0
 offset_top = 91.0
 offset_right = -117.0
 offset_bottom = 151.0
+theme_override_font_sizes/font_size = 76
 text = "x:0.0,y:0.0"
 script = ExtResource("8_g2vtq")
 player = NodePath("..")

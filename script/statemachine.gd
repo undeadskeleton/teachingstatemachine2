@@ -7,6 +7,7 @@ var states : Dictionary = {}
 var current_state : StateInterface
 var currentstatename : String 
 @export var initial_state : StateInterface
+var direction : int
 
 var lastdir : int = 1
 

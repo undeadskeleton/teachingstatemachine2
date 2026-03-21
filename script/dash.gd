@@ -1,27 +1,30 @@
 extends StateInterface
 
 class_name DashState
-@export var dash_speed : float = 600
-@export var dash_time : float = 0.4
+@export var dash_speed : float = 1000
+@export var dash_time : float = 0.16
 var dash_timer : float = 0.0
 var savedirection : int
+
 func enter()-> void:
 	#print("Enter dash state")
 	var character = statemachine.get_parent()
-	var direction = Input.get_axis("ui_left","ui_right")
+	statemachine.direction = Input.get_axis("ui_left","ui_right")
 	
-	if direction==0:
-		direction = statemachine.lastdir
+	if statemachine.direction == 0:
+		statemachine.direction = statemachine.lastdir
+	
+	character.velocity.x = statemachine.direction * dash_speed
 		#statemachine.lastdir = direction
-	print("direction:",direction," dash speed:",dash_speed)
-	character.velocity.x = direction * dash_speed
 	dash_timer = dash_time
 	
 func physics_update(delta: float)-> void:
 	dash_timer-=delta
 	if dash_timer<=0:
+		#statemachine.direction=0
 		var direction = Input.get_axis("ui_left","ui_right")
-		if direction==0:
+		#print("after timer end direction: ",direction)
+		if statemachine.direction==0:
 			statemachine.change_state("idlestate")
 		else:
 			statemachine.change_state("movestate")

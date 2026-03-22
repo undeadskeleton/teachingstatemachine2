@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bdrr5j46kymw"]
+[gd_scene format=3 uid="uid://bdrr5j46kymw"]
 
 [ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_xo3ru"]
 [ext_resource type="Script" uid="uid://d12jgqts1xm5t" path="res://script/statemachine.gd" id="2_fvtld"]
@@ -27,39 +27,41 @@ height = 128.0
 [sub_resource type="LabelSettings" id="LabelSettings_oh5ij"]
 font_size = 25
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" unique_id=1032768980]
 script = SubResource("GDScript_oh5ij")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1962506380]
 texture = ExtResource("1_xo3ru")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=178436456]
 shape = SubResource("CapsuleShape2D_hjaqi")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1586083843]
 enabled = false
 
-[node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+[node name="StateMachine" type="Node" parent="." unique_id=584355125 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fvtld")
 initial_state = NodePath("IdleState")
 
-[node name="IdleState" type="Node" parent="StateMachine"]
+[node name="IdleState" type="Node" parent="StateMachine" unique_id=1119569232]
 script = ExtResource("3_oh5ij")
 metadata/_custom_type_script = "uid://whum2p8jvoo7"
 
-[node name="MoveState" type="Node" parent="StateMachine"]
+[node name="MoveState" type="Node" parent="StateMachine" unique_id=1775987936]
 script = ExtResource("4_hp4bs")
 metadata/_custom_type_script = "uid://coexvebb5cbgo"
 
-[node name="JumpState" type="Node" parent="StateMachine"]
+[node name="JumpState" type="Node" parent="StateMachine" unique_id=1588910958]
 script = ExtResource("5_g2vtq")
+jump_height = -450
 metadata/_custom_type_script = "uid://b0h7n1ne3wdti"
 
-[node name="DashState" type="Node" parent="StateMachine"]
+[node name="DashState" type="Node" parent="StateMachine" unique_id=111605143]
 script = ExtResource("6_2fvbb")
 metadata/_custom_type_script = "uid://bb6k3hg4bvavv"
 
-[node name="StateDebugLabel" type="Label" parent="." node_paths=PackedStringArray("statemachine")]
+[node name="StateDebugLabel" type="Label" parent="." unique_id=1694937489 node_paths=PackedStringArray("statemachine")]
+visible = false
 offset_left = -329.0
 offset_top = -201.0
 offset_right = 206.0
@@ -70,7 +72,8 @@ autowrap_mode = 2
 script = ExtResource("7_hp4bs")
 statemachine = NodePath("../StateMachine")
 
-[node name="VelocityDebugLabel" type="Label" parent="." node_paths=PackedStringArray("player")]
+[node name="VelocityDebugLabel" type="Label" parent="." unique_id=952769628 node_paths=PackedStringArray("player")]
+visible = false
 offset_left = -336.0
 offset_top = 91.0
 offset_right = -117.0
@@ -80,7 +83,8 @@ text = "x:0.0,y:0.0"
 script = ExtResource("8_g2vtq")
 player = NodePath("..")
 
-[node name="DashTimerDebugLabel" type="Label" parent="." node_paths=PackedStringArray("dashstate")]
+[node name="DashTimerDebugLabel" type="Label" parent="." unique_id=123115092 node_paths=PackedStringArray("dashstate")]
+visible = false
 offset_left = 200.0
 offset_top = -164.0
 offset_right = 351.0
@@ -89,3 +93,22 @@ text = "DashTimer:"
 vertical_alignment = 1
 script = ExtResource("9_2fvbb")
 dashstate = NodePath("../StateMachine/DashState")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1656249912]
+offset_left = -605.0
+offset_top = 306.0
+offset_right = -565.0
+offset_bottom = 346.0
+
+[node name="JumpButton" type="TouchScreenButton" parent="." unique_id=626961653]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(439, 250)
+texture_normal = ExtResource("1_xo3ru")
+action = "ui_up"
+visibility_mode = 1
+
+[node name="DashButton" type="TouchScreenButton" parent="." unique_id=2052486534]
+position = Vector2(414, 253)
+rotation = 1.5707964
+texture_normal = ExtResource("1_xo3ru")
+action = "Dash"

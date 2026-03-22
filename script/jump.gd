@@ -9,8 +9,8 @@ func enter()-> void:
 func physics_update(delta: float)-> void:
 	var character = statemachine.get_parent()
 
-	if !character.is_on_floor():
-		character.velocity.y += delta * 980
+	#if !character.is_on_floor():
+	character.velocity.y += delta * 980
 	
 	#handle air movement 
 	statemachine.direction= Input.get_axis("ui_left","ui_right")

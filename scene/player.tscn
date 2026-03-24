@@ -37,7 +37,6 @@ texture = ExtResource("1_xo3ru")
 shape = SubResource("CapsuleShape2D_hjaqi")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1586083843]
-enabled = false
 
 [node name="StateMachine" type="Node" parent="." unique_id=584355125 node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fvtld")
@@ -93,22 +92,3 @@ text = "DashTimer:"
 vertical_alignment = 1
 script = ExtResource("9_2fvbb")
 dashstate = NodePath("../StateMachine/DashState")
-
-[node name="VirtualJoystick" type="VirtualJoystick" parent="." unique_id=1656249912]
-offset_left = -605.0
-offset_top = 306.0
-offset_right = -565.0
-offset_bottom = 346.0
-
-[node name="JumpButton" type="TouchScreenButton" parent="." unique_id=626961653]
-self_modulate = Color(1, 1, 1, 0.25490198)
-position = Vector2(439, 250)
-texture_normal = ExtResource("1_xo3ru")
-action = "ui_up"
-visibility_mode = 1
-
-[node name="DashButton" type="TouchScreenButton" parent="." unique_id=2052486534]
-position = Vector2(414, 253)
-rotation = 1.5707964
-texture_normal = ExtResource("1_xo3ru")
-action = "Dash"

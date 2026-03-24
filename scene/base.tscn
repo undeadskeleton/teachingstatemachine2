@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bievrl1fdgxs1"]
+[gd_scene format=3 uid="uid://bievrl1fdgxs1"]
 
 [ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_lsuyn"]
 [ext_resource type="PackedScene" uid="uid://bdrr5j46kymw" path="res://scene/player.tscn" id="2_vanxo"]
@@ -8,55 +8,85 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oebcw"]
 size = Vector2(285, 13)
 
-[node name="base" type="Node2D"]
+[node name="base" type="Node2D" unique_id=1380457911]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=407049237]
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1497617810]
 position = Vector2(582, 642.5)
 scale = Vector2(9.171875, 0.1484375)
 texture = ExtResource("1_lsuyn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=801149612]
 position = Vector2(576, 641)
 shape = SubResource("WorldBoundaryShape2D_vanxo")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=1454064815]
 position = Vector2(16, -227)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1872675236]
 position = Vector2(1026, 644)
 scale = Vector2(2.234375, 0.12500009)
 texture = ExtResource("1_lsuyn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1590564284]
 position = Vector2(1026.5, 644.5)
 shape = SubResource("RectangleShape2D_oebcw")
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=985587299]
 position = Vector2(-860, -112)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D3" unique_id=698157012]
 position = Vector2(1026, 644)
 scale = Vector2(2.234375, 0.12500009)
 texture = ExtResource("1_lsuyn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1559473344]
 position = Vector2(1026.5, 644.5)
 shape = SubResource("RectangleShape2D_oebcw")
 
-[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1202599759]
 position = Vector2(-405, -98)
 
-[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4" unique_id=1135157471]
 position = Vector2(1026, 644)
 scale = Vector2(2.234375, 0.12500009)
 texture = ExtResource("1_lsuyn")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=1143991964]
 position = Vector2(1026.5, 644.5)
 shape = SubResource("RectangleShape2D_oebcw")
 
-[node name="Player" parent="." instance=ExtResource("2_vanxo")]
+[node name="Player" parent="." unique_id=232715652 instance=ExtResource("2_vanxo")]
 position = Vector2(135, 413)
 scale = Vector2(0.36, 0.36)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1563244480]
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=193166483]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 31.0
+offset_top = 571.0
+offset_right = 71.0
+offset_bottom = 611.0
+
+[node name="JumpButton" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=365512771]
+self_modulate = Color(1, 1, 1, 0.25490198)
+position = Vector2(978, -57)
+scale = Vector2(1.0000001, 1.0000001)
+texture_normal = ExtResource("1_lsuyn")
+action = "ui_up"
+visibility_mode = 1
+
+[node name="DashButton" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=397028857]
+position = Vector2(925, -51)
+rotation = 1.5707964
+scale = Vector2(1.0000001, 1.0000001)
+texture_normal = ExtResource("1_lsuyn")
+action = "Dash"
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer/Control" unique_id=395803472]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

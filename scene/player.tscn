@@ -9,6 +9,7 @@
 [ext_resource type="Script" uid="uid://btjrbmb7lf61v" path="res://scene/label.gd" id="7_hp4bs"]
 [ext_resource type="Script" uid="uid://pybfe2cu1cv2" path="res://scene/velocity_debug_label.gd" id="8_g2vtq"]
 [ext_resource type="Script" uid="uid://cec44vg7yyckg" path="res://scene/dash_timer_debug_label.gd" id="9_2fvbb"]
+[ext_resource type="PackedScene" uid="uid://r6pnkcg0rv2f" path="res://scene/touch_screen_control.tscn" id="10_ml7e8"]
 
 [sub_resource type="GDScript" id="GDScript_oh5ij"]
 script/source = "extends CharacterBody2D
@@ -60,7 +61,6 @@ script = ExtResource("6_2fvbb")
 metadata/_custom_type_script = "uid://bb6k3hg4bvavv"
 
 [node name="StateDebugLabel" type="Label" parent="." unique_id=1694937489 node_paths=PackedStringArray("statemachine")]
-visible = false
 offset_left = -329.0
 offset_top = -201.0
 offset_right = 206.0
@@ -72,7 +72,6 @@ script = ExtResource("7_hp4bs")
 statemachine = NodePath("../StateMachine")
 
 [node name="VelocityDebugLabel" type="Label" parent="." unique_id=952769628 node_paths=PackedStringArray("player")]
-visible = false
 offset_left = -336.0
 offset_top = 91.0
 offset_right = -117.0
@@ -83,7 +82,6 @@ script = ExtResource("8_g2vtq")
 player = NodePath("..")
 
 [node name="DashTimerDebugLabel" type="Label" parent="." unique_id=123115092 node_paths=PackedStringArray("dashstate")]
-visible = false
 offset_left = 200.0
 offset_top = -164.0
 offset_right = 351.0
@@ -92,3 +90,10 @@ text = "DashTimer:"
 vertical_alignment = 1
 script = ExtResource("9_2fvbb")
 dashstate = NodePath("../StateMachine/DashState")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=128355192]
+
+[node name="TouchScreenControl" parent="CanvasLayer" unique_id=75187184 instance=ExtResource("10_ml7e8")]
+anchors_preset = -1
+grow_horizontal = 1
+grow_vertical = 1

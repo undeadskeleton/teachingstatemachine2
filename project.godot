@@ -19,6 +19,11 @@ run/main_scene="uid://bievrl1fdgxs1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1544
+window/size/viewport_height=720
+
 [input]
 
 Dash={
@@ -32,7 +37,6 @@ Dash={
 pointing/android/enable_pan_and_scale_gestures=true
 pointing/android/disable_scroll_deadzone=true
 pointing/emulate_touch_from_mouse=true
-pointing/emulate_mouse_from_touch=false
 
 [rendering]
 

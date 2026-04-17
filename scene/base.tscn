@@ -25,7 +25,7 @@ shape = SubResource("WorldBoundaryShape2D_vanxo")
 position = Vector2(16, -227)
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2" unique_id=1872675236]
-position = Vector2(1026, 644)
+position = Vector2(1033, 644)
 scale = Vector2(2.234375, 0.12500009)
 texture = ExtResource("1_lsuyn")
 
@@ -60,33 +60,3 @@ shape = SubResource("RectangleShape2D_oebcw")
 [node name="Player" parent="." unique_id=232715652 instance=ExtResource("2_vanxo")]
 position = Vector2(135, 413)
 scale = Vector2(0.36, 0.36)
-
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1563244480]
-
-[node name="Control" type="Control" parent="CanvasLayer" unique_id=193166483]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 31.0
-offset_top = 571.0
-offset_right = 71.0
-offset_bottom = 611.0
-
-[node name="JumpButton" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=365512771]
-self_modulate = Color(1, 1, 1, 0.25490198)
-position = Vector2(978, -57)
-scale = Vector2(1.0000001, 1.0000001)
-texture_normal = ExtResource("1_lsuyn")
-action = "ui_up"
-visibility_mode = 1
-
-[node name="DashButton" type="TouchScreenButton" parent="CanvasLayer/Control" unique_id=397028857]
-position = Vector2(925, -51)
-rotation = 1.5707964
-scale = Vector2(1.0000001, 1.0000001)
-texture_normal = ExtResource("1_lsuyn")
-action = "Dash"
-
-[node name="VirtualJoystick" type="VirtualJoystick" parent="CanvasLayer/Control" unique_id=395803472]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0

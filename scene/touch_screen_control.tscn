@@ -1,0 +1,88 @@
+[gd_scene format=3 uid="uid://r6pnkcg0rv2f"]
+
+[ext_resource type="Texture2D" uid="uid://cax5827rh6whe" path="res://icon.svg" id="1_sjd8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sjd8v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ngg3f"]
+
+[node name="TouchScreenControl" type="Control" unique_id=75187184]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1738207445]
+custom_minimum_size = Vector2(720, 100)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sjd8v")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer" unique_id=551155001]
+layout_mode = 2
+
+[node name="Joystick" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=1802344019]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="VirtualJoystick" type="VirtualJoystick" parent="PanelContainer/HBoxContainer/Joystick" unique_id=333538780]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Jump&Dash" type="PanelContainer" parent="PanelContainer/HBoxContainer" unique_id=524896612]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Jump&Dash" unique_id=623370778]
+layout_mode = 2
+
+[node name="ContainerforSpace" type="PanelContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer" unique_id=1031292469]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="ContainerforButtons" type="PanelContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer" unique_id=1689860753]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons" unique_id=31038239]
+layout_mode = 2
+
+[node name="JumpContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons/HBoxContainer" unique_id=2069163207]
+layout_mode = 2
+size_flags_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="Jump" type="TouchScreenButton" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons/HBoxContainer/JumpContainer" unique_id=528967656]
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_sjd8v")
+action = "ui_accept"
+
+[node name="DashContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons/HBoxContainer" unique_id=1093742825]
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
+
+[node name="Dash" type="TouchScreenButton" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons/HBoxContainer/DashContainer" unique_id=1403357278]
+position = Vector2(-4, 0)
+rotation = 1.5707964
+scale = Vector2(0.7, 0.7)
+texture_normal = ExtResource("1_sjd8v")
+action = "Dash"
+
+[node name="PanelContainer" type="PanelContainer" parent="PanelContainer/HBoxContainer/Jump&Dash/HBoxContainer/ContainerforButtons/HBoxContainer" unique_id=408920920]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.28
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ngg3f")
